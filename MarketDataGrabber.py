@@ -32,7 +32,7 @@ def item_value_search(item_to_search, item_type='currency'):
         for item in map_market_data['lines']:
             if item['name'] == str(item_to_search):
                 return item['chaosValue']
-    elif item_type == 'unique map':
-        for item in map_market_data['lines']:
-            if item['name'] == str(item_to_search):
-                return item['chaosValue']
+    # elif item_type == 'unique map':
+    #     for item in map_market_data['lines']:
+    #         if item['name'] == str(item_to_search):
+    #             return item['chaosValue']

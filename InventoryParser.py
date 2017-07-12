@@ -20,6 +20,7 @@ COOKIE = {'POESESSID': User.poesessid}
 
 r = requests.get(url=api_endpoint, params=PARAMS, cookies=COOKIE)
 
+print(r.status_code)
 
 inventory_dict = r.json()
 items = inventory_dict['items']
@@ -46,11 +47,11 @@ for item in items:
         maps[item['typeLine']] += 1
 
 
-def import_map_data():
-    """imports all maps and unique maps from poe.ninja into the corresponding dicts for easy access"""
-
-    global maps
-    global unique_maps
+# def import_map_data():
+#     """imports all maps and unique maps from poe.ninja into the corresponding dicts for easy access"""
+#
+#     global maps
+#     global unique_maps
 
 
 def calculate_total_in_chaos():
