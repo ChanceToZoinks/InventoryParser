@@ -3,7 +3,7 @@ Path of Exile inventory value calculator
 
 You need a file called UserData.py in this format in the same folder:
 
-
+##
 
 account_name = ''
 
@@ -15,6 +15,6 @@ poesessid = ''
 
 client_txt_path
 
-
+##
 
 Still in the process of completing.
