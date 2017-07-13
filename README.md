@@ -12,5 +12,7 @@ league = ''
 
 poesessid = ''
 
+client_txt_path
+
 
 Still in the process of completing.
