@@ -11,6 +11,7 @@ user_inputted_info = ['acc', 'char', 'league', 'poesessid', 'client.txt path']
 
 
 def file_setup():
+    """this shoudl be called from store_data_callback to ensure that the user info is populated"""
     # check if userdata.txt exists and if not create it with the proper format
     if os.path.exists('userdata.txt'):
         print('userdata.txt exists nothing further needed here')
@@ -23,6 +24,7 @@ def file_setup():
 
 
 def display_user_data_entry_fields():
+    """this displays all of the necessary fields and button for initial user data setup"""
     global main_window
     global setup_frame
 
@@ -58,6 +60,7 @@ def display_user_data_entry_fields():
 
 
 def store_data_callback():
+    """button press calls this and stores data in file for future use"""
     # iterate over all entry fields in setup_frame and put the data contained in them into user_inputted_info
     i = 0
     for child in setup_frame.children.values():
@@ -72,9 +75,9 @@ def store_data_callback():
     # after data is entered hide the setup frame
     setup_frame.grid_forget()
     setup_frame.destroy()
+    file_setup()
 
 # mainloop() needs to be at the end of the code. it's blocking and it's responsible for triggering events
-file_setup()
 display_user_data_entry_fields()
 print(str(open('userdata.txt').readlines()))
 main_window.mainloop()
