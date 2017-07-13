@@ -1,3 +1,5 @@
+"""this helper for the tracker handles client.txt monitoring and notifies the tracker of changes"""
+
 import time
 import sys
 
@@ -11,7 +13,7 @@ for (name, short) in named_libs:
         globals()[short] = lib
 
 
-# the method for monitoring whether or not a file changes in real time was found here:
+# the 'follow' method for monitoring whether or not a file changes in real time was found here:
 # https://stackoverflow.com/questions/5419888/reading-from-a-frequently-updated-file
 
 

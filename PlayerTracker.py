@@ -62,13 +62,16 @@ def zone_changed(temp_hash, temp_name):
     # overwrite the current zone hash and zone name
     current_zone['tile_hash'] = temp_hash
     current_zone['zone_name'] = temp_name
+
     zone_history = dict(zip(tile_hash, zone_name))
-    print('zone changed')
-    print('current zone: ' + str(current_zone))
-    print('zones visited this session: ')
-    print(zone_history)
+
+    # TODO: instead of printing the information the data will be sent to some other file to be processed and
+    # TODO: incorporated into a full app
+    print('zone changed. current zone: ' + str(current_zone))
+    print('zones visited this session: ' + str(zone_history))
 
 
 def start_tracking():
-    """the redundancy here is necessary for centralization"""
+    """the redundancy here is necessary for centralization. this should be the method called to start tracking"""
+
     PlayerTrackerHelper.start_tracking()
