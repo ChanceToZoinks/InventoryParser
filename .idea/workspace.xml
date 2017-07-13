@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0379e0c-747f-4101-88d0-43b65df79d73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InventoryParser.py" afterPath="$PROJECT_DIR$/InventoryParser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MarketDataGrabber.py" afterPath="$PROJECT_DIR$/MarketDataGrabber.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PlayerTracker.py" afterPath="$PROJECT_DIR$/PlayerTracker.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +51,8 @@
       <file leaf-file-name="PlayerTracker.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="62" column="41" lean-forward="true" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+            <state relative-caret-position="444">
+              <caret line="72" column="58" lean-forward="false" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -660,8 +658,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="62" column="41" lean-forward="true" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+        <state relative-caret-position="444">
+          <caret line="72" column="58" lean-forward="false" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
           <folding />
         </state>
       </provider>

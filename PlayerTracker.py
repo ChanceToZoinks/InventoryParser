@@ -1,5 +1,5 @@
 """Every time a zone is entered Path of Exile\logs\client.txt is updated with a block of text. This block of text
-   indicates the current step in the connection process and identifies the zone being entered each update block takes
+   indicates the current step in the connection process and identifies the zone being entered. Each update block takes
    the form:
 
    2017/07/13 04:17:11 48766015 857 [DEBUG Client 460] Got Instance Details from login server
@@ -19,12 +19,12 @@
 
    The tile hash is a hashed unique identifier for every zone that doesn't appear to change at any point.
    The second line tells us the internal name of the zone and in the case of non-map zones identifies both difficulty
-   and act. There is a third piece to the second line that indicates the area of the act the player is in. In the case
-   of the example above 2_4_town tells us that the player has entered Cruel Act 4 Town. Dried Lake in Cruel is
-   identified by 2_4_2. It appears that with the exception of the town the third piece of the identifier is a number
-   starting with one and going to N (where N is the number of zones in the act). The number appears to be based on the
-   order the player must progress through the zones. So for example Cruel Aqueduct is identified by 2_4_1 because it is
-   the first zone in Act 4 in the Cruel difficulty.
+   and act. There is a third piece (and in some rare cases a fourth) to the second line that indicates the area of the
+   act the player is in. In the case of the example above 2_4_town tells us that the player has entered Cruel Act 4
+   Town. Dried Lake in Cruel is identified by 2_4_2. It appears that with the exception of the town the third piece of
+   the identifier is a number starting with one and going to N (where N is the number of zones in the act). The number
+   appears to be based on the order the player must progress through the zones. So, for example, Cruel Aqueduct is
+   identified by 2_4_1 because it is the first zone in Act 4 in the Cruel difficulty.
 
    Maps are handled differently as can be seen here:
 
@@ -34,8 +34,8 @@
    two pieces of information it is possible to track which zone the player is currently in and which zones they have
    previously been in. This is important because it allows us to compare potential farming spots more accurately than
    simply resetting xp every now and then and "eyeballing it." It also allows us to compare zones based on the amount of
-   wealth being generated in each zone over a period of time; although, it should be noted that since the game is RNG
-   based simply comparing chaos/time between zones isn't always going to be a good way to determine the economic
+   wealth being generated in each zone over a period of time. Although, it should be noted that since the game is RNG
+   based simply comparing chaos/time between zones isn't always going to be a good way to compare the economic
    efficiency of a given zone to another. With that said this should prove useful for targeted farming such as was done
    in Legacy league with the use of IIQ and Spider Forest Map.
 """
@@ -44,13 +44,13 @@ import PlayerTrackerHelper
 
 
 # 'zone_history' keeps track of every zone a player enters and the corresponding Tile hash
-# this is important so historical data can be gathered on each zone. zone_history is zipped from two lists in helper
+# this is important so historical data can be gathered on each zone. zone_history is zipped from two lists
 zone_history = {}
 
 tile_hash = []
 zone_name = []
 
-# 'current_zone' takes the form tile_hash:zone_name and is updated on zone change by the helper
+# 'current_zone' takes the form tile_hash:zone_name and is updated on zone change
 current_zone = {'tile_hash': '', 'zone_name': ''}
 
 
@@ -68,4 +68,7 @@ def zone_changed(temp_hash, temp_name):
     print('zones visited this session: ')
     print(zone_history)
 
-PlayerTrackerHelper.start_tracking()
+
+def start_tracking():
+    """the redundancy here is necessary for centralization"""
+    PlayerTrackerHelper.start_tracking()
