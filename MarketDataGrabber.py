@@ -1,9 +1,16 @@
-import requests
-import UserData as User
+import sys
+
+named_libs = [('requests', 'requests'), ('UserData', 'User')]
+for (name, short) in named_libs:
+    try:
+        lib = __import__(name)
+    except ImportError:
+        print(sys.exc_info())
+    else:
+        globals()[short] = lib
 
 """Grab the market data for currency and maps from poe.ninja"""
 
-# poe.ninja doesn't require any kind of cookie or api key to access their data.
 currency_api_endpoint = 'http://api.poe.ninja/api/Data/GetCurrencyOverview'
 map_api_endpoint = 'http://api.poe.ninja/api/Data/GetMapOverview'
 unique_map_api_endpoint = 'http://cdn.poe.ninja/api/Data/GetUniqueMapOverview'
@@ -22,7 +29,7 @@ unique_map_market_data = unique_maps.json()
 
 
 def item_value_search(item_to_search, item_type='c'):
-    """'c' is default, 'm'/'u_m' options ('m' means 'map', 'u_m' means 'unique map'), returns value in c"""
+    """item_type:'c' is default, 'm'/'u_m' optional ('m' means 'map', 'u_m' means 'unique map'), returns chaos value"""
 
     if item_type == 'c':
         for item in currency_market_data['lines']:
