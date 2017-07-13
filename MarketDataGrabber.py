@@ -9,7 +9,7 @@ map_api_endpoint = 'http://api.poe.ninja/api/Data/GetMapOverview'
 unique_map_api_endpoint = 'http://cdn.poe.ninja/api/Data/GetUniqueMapOverview'
 
 # pass the league grabbed from UserData in GET request
-PARAMS = {'league', User.league}
+PARAMS = {'league': User.league}
 
 currency = requests.get(currency_api_endpoint, params=PARAMS)
 maps = requests.get(map_api_endpoint, params=PARAMS)
@@ -21,18 +21,18 @@ map_market_data = maps.json()
 unique_map_market_data = unique_maps.json()
 
 
-def item_value_search(item_to_search, item_type='currency'):
-    """item and second argument indicating type 'currency' is default, 'map'/'unique map' options, returns value in c"""
+def item_value_search(item_to_search, item_type='c'):
+    """'c' is default, 'm'/'u_m' options ('m' means 'map', 'u_m' means 'unique map'), returns value in c"""
 
-    if item_type == 'currency':
+    if item_type == 'c':
         for item in currency_market_data['lines']:
             if item['currencyTypeName'] == str(item_to_search):
                 return item['chaosEquivalent']
-    elif item_type == 'map':
+    elif item_type == 'm':
         for item in map_market_data['lines']:
             if item['name'] == str(item_to_search):
                 return item['chaosValue']
-    # elif item_type == 'unique map':
-    #     for item in map_market_data['lines']:
-    #         if item['name'] == str(item_to_search):
-    #             return item['chaosValue']
+    elif item_type == 'u_m':
+        for item in unique_map_market_data['lines']:
+            if item['name'] == str(item_to_search):
+                return item['chaosValue']

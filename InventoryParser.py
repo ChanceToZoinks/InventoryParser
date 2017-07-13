@@ -10,6 +10,8 @@ for (name, short) in named_libs:
         globals()[short] = lib
 
 
+"""this contains all the methods/data members necessary to parse a character's inventory and determine value in chaos"""
+
 api_endpoint = 'https://www.pathofexile.com/character-window/get-items'
 
 
@@ -20,98 +22,66 @@ COOKIE = {'POESESSID': User.poesessid}
 
 r = requests.get(url=api_endpoint, params=PARAMS, cookies=COOKIE)
 
-print(r.status_code)
 
 inventory_dict = r.json()
 items = inventory_dict['items']
 
 
-money = {'Chaos Orb': 0, 'Orb of Alchemy': 0, "Cartographer's Chisel": 0, 'Orb of Alteration': 0, 'Orb of Scouring': 0,
-         'Orb of Augmentation': 0, 'Vaal Orb': 0, 'Exalted Orb': 0, 'Divine Orb': 0, "Glassblower's Bauble": 0,
-         "Blacksmith's Whetstone": 0, "Armourer's Scrap": 0, 'Orb of Chance': 0, 'Orb of Regret': 0, 'Regal Orb': 0,
-         'Orb of Transmutation': 0, 'Chromatic Orb': 0, 'Orb of Fusing': 0, "Jeweller's Orb": 0, 'Silver Coin': 0,
-         'Scroll of Wisdom': 0, 'Portal Scroll': 0, "Gemcutter's Prism": 0, 'Blessed Orb': 0}
+money = {}
 
 maps = {}
 
 unique_maps = {}
 
-total_chaos = 0
 
-for item in items:
-    if item['typeLine'] in money:
-        money[item['typeLine']] += item['stackSize']
-    elif 'Map' in item['typeLine']:
-        if not maps.__contains__(item['typeLine']):
-            maps[item['typeLine']] = 0
-        maps[item['typeLine']] += 1
+def import_item_data():
+    """imports all relevant items into corresponding dicts"""
+
+    # check to see if money already contains each currency found in the poe.ninja api if not create a key for it value=0
+    for c in Market.currency_market_data['lines']:
+        if not c['currencyTypeName'] in money:
+            money[c['currencyTypeName']] = 0
+
+    # check to see if maps already contains each map found in the poe.ninja api if not create a key for it value=0
+    for m in Market.map_market_data['lines']:
+        if not m['baseType'] in maps:
+            maps[m['baseType']] = 0
+
+    # check to see if u_maps already contains each u_map found in the poe.ninja api if not create a key for it value=0
+    for u_m in Market.unique_map_market_data['lines']:
+        if not u_m['name'] in unique_maps:
+            unique_maps[u_m['name']] = 0
 
 
-# def import_map_data():
-#     """imports all maps and unique maps from poe.ninja into the corresponding dicts for easy access"""
-#
-#     global maps
-#     global unique_maps
+def count_currency_in_inventory():
+    """counts the currency in the player inventory and assigns the value of the corresponding dict entry to the total"""
+
+
+
+
+total_in_chaos = 0
 
 
 def calculate_total_in_chaos():
-    """totals up the chaos value of all currency/maps in inventory each call"""
+    """each call totals up the chaos value of all currency/maps in the dicts: 'currency', 'maps', 'unique maps'"""
 
-    global total_chaos
+    global total_in_chaos
 
-    # grab ratios from MarketDataGrabber and calculate total value in chaos
     for k in money:
+        # this is necessary because all other values are in chaos ratio so chaos doesn't have a value in poe.ninja api
         if k == 'Chaos Orb':
-            total_chaos += money[k]
-        elif k == 'Orb of Alchemy':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == "Cartographer's Chisel":
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Orb of Alteration':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Orb of Scouring':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Orb of Augmentation':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Vaal Orb':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Exalted Orb':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Divine Orb':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == "Glassblower's Bauble":
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == "Blacksmith's Whetstone":
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == "Armourer's Scrap":
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Orb of Chance':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Orb of Regret':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Regal Orb':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Orb of Transmutation':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Chromatic Orb':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Orb of Fusing':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == "Jeweller's Orb":
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Silver Coin':
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == "Gemcutter's Prism":
-            total_chaos += money[k] * Market.item_value_search(k)
-        elif k == 'Blessed Orb':
-            total_chaos += money[k] * Market.item_value_search(k)
+            total_in_chaos += money[k]
+        else:
+            total_in_chaos += money[k] * Market.item_value_search(k)
 
     for m in maps:
-        total_chaos += maps[m] * Market.item_value_search(m, 'map')
+        total_in_chaos += maps[m] * Market.item_value_search(m, 'm')
 
+    for u_m in unique_maps:
+        total_in_chaos += unique_maps[u_m] * Market.item_value_search(u_m, 'u_m')
+
+
+import_item_data()
 calculate_total_in_chaos()
 
-print(total_chaos)
-
-# TODO: GRAB MAP DATA FROM POE.NINJA THEN FILL THE DICTS THEN CHECK EACH MAP AGAINST UNIQUE MAP IF NOT UNIQUE FIGURE OUT
-# TODO: BASE MAP TYPE AND UPDATE COUNTS THEN CONVERT COUNTS TO CHAOS VALUE AND BOOM DONE
+print(total_in_chaos)
