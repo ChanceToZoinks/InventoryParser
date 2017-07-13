@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0379e0c-747f-4101-88d0-43b65df79d73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InventoryParser.py" afterPath="$PROJECT_DIR$/InventoryParser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MarketDataGrabber.py" afterPath="$PROJECT_DIR$/MarketDataGrabber.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserData.py" afterPath="$PROJECT_DIR$/UserData.py" />
-    </list>
+    <list default="true" id="c0379e0c-747f-4101-88d0-43b65df79d73" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +12,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InventoryParser.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InventoryParser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InventoryParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+            <state relative-caret-position="270">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="e#1517#2334#0" expanded="false" />
                 <element signature="e#2373#3812#0" expanded="false" />
@@ -50,6 +46,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ZoneChangeHelper.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ZoneChangeHelper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -73,8 +79,9 @@
       <list>
         <option value="$PROJECT_DIR$/gh.py" />
         <option value="$PROJECT_DIR$/UserData.py" />
-        <option value="$PROJECT_DIR$/InventoryParser.py" />
         <option value="$PROJECT_DIR$/MarketDataGrabber.py" />
+        <option value="$PROJECT_DIR$/InventoryParser.py" />
+        <option value="$PROJECT_DIR$/ZoneChangeHelper.py" />
       </list>
     </option>
   </component>
@@ -544,6 +551,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/InventoryParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#1517#2334#0" expanded="false" />
+            <element signature="e#2373#3812#0" expanded="false" />
+            <element signature="e#3851#4479#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UserData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -560,15 +579,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InventoryParser.py">
+    <entry file="file://$PROJECT_DIR$/ZoneChangeHelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
-          <folding>
-            <element signature="e#1517#2334#0" expanded="false" />
-            <element signature="e#2373#3812#0" expanded="false" />
-            <element signature="e#3851#4479#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="429">
+          <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
