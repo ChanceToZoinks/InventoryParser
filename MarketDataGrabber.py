@@ -1,3 +1,5 @@
+"""Grab the market data for currency and maps from poe.ninja"""
+
 import sys
 
 named_libs = [('requests', 'requests'), ('UserData', 'User')]
@@ -9,7 +11,6 @@ for (name, short) in named_libs:
     else:
         globals()[short] = lib
 
-"""Grab the market data for currency and maps from poe.ninja"""
 
 currency_api_endpoint = 'http://api.poe.ninja/api/Data/GetCurrencyOverview'
 map_api_endpoint = 'http://api.poe.ninja/api/Data/GetMapOverview'

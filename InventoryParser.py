@@ -1,3 +1,7 @@
+"""this contains all the methods/data members necessary to parse a character's inventory and determine value in chaos
+   'import_item_data()' should always be run before 'count_items_in_inventory()' followed by 'calculate..chaos()'
+"""
+
 import sys
 
 named_libs = [('requests', 'requests'), ('UserData', 'User'), ('MarketDataGrabber', 'Market')]
@@ -9,10 +13,6 @@ for (name, short) in named_libs:
     else:
         globals()[short] = lib
 
-
-"""this contains all the methods/data members necessary to parse a character's inventory and determine value in chaos
-   'import_item_data()' should always be run before 'count_items_in_inventory()' followed by 'calculate..chaos()'
-"""
 
 api_endpoint = 'https://www.pathofexile.com/character-window/get-items'
 
