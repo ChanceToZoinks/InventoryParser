@@ -17,4 +17,4 @@ client_txt_path = ''
 
 ##
 
-Still in the process of completing.
+Still in the process of completing. Ultimately a GUI will be created to allow a user to input any necessary information without having to manually modify a file.
