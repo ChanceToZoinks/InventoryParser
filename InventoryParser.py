@@ -2,16 +2,9 @@
    'import_item_data()' should always be run before 'count_items_in_inventory()' followed by 'calculate..chaos()'
 """
 
-import sys
-
-named_libs = [('requests', 'requests'), ('UserData', 'User'), ('MarketDataGrabber', 'Market')]
-for (name, short) in named_libs:
-    try:
-        lib = __import__(name)
-    except ImportError:
-        print(sys.exc_info())
-    else:
-        globals()[short] = lib
+import MarketDataGrabber as Market
+import UserData as User
+import requests
 
 
 api_endpoint = 'https://www.pathofexile.com/character-window/get-items'
