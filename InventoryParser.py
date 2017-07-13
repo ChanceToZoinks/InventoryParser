@@ -10,7 +10,9 @@ for (name, short) in named_libs:
         globals()[short] = lib
 
 
-"""this contains all the methods/data members necessary to parse a character's inventory and determine value in chaos"""
+"""this contains all the methods/data members necessary to parse a character's inventory and determine value in chaos
+   'import_item_data()' should always be run before 'count_items_in_inventory()' followed by 'calculate..chaos()'
+"""
 
 api_endpoint = 'https://www.pathofexile.com/character-window/get-items'
 
@@ -26,8 +28,13 @@ r = requests.get(url=api_endpoint, params=PARAMS, cookies=COOKIE)
 inventory_dict = r.json()
 items = inventory_dict['items']
 
+# 'money' has a hardcoded key:value {'Chaos Orb': 0} because the poe.ninja api doesn't include chaos orbs
+# this is due to the fact that all other currency values are based on chaos so it is unnecessary to tell people
+# that 1 chaos orb sells for 1 chaos orb
+money = {'Chaos Orb': 0}
 
-money = {}
+# 'not_money' contains a list of words to exclude from searches since poe.ninja doesn't list their chaos ratio
+not_money = ['Alteration Shard', 'Scroll Fragment', 'Alchemy Shard', 'Transmutation Shard']
 
 maps = {}
 
@@ -53,10 +60,28 @@ def import_item_data():
             unique_maps[u_m['name']] = 0
 
 
-def count_currency_in_inventory():
+def count_items_in_inventory():
     """counts the currency in the player inventory and assigns the value of the corresponding dict entry to the total"""
 
-
+    for item in items:
+        # frameType == 5 is checking for currency, fairly certain this is faster than comparing strings
+        # also check to see if 'not_money' contains the item in question, if so ignore it
+        if item['frameType'] == 5 and not not_money.__contains__(item['typeLine']):
+            money[item['typeLine']] += item['stackSize']
+        # first determine if the item is a map and that it is not unique (frameType == 3)
+        # second iterate over all non-unique maps and compare the base type with the 'typeLine' of the map in question
+        # once the base type is determined add one to the count of that map in the dict 'maps'
+        # this is necessary because blue maps have a 'typeLine' that includes both base type and modifiers
+        # this method also works for rare and normal maps so it solves all problems with one solution
+        elif 'Map' in item['typeLine'] and item['frameType'] != 3:
+            for m in maps:
+                if m in item['typeLine']:
+                    maps[m] += 1
+        # if the map is unique add one to the count of that unique map in the dict 'unique_maps'
+        elif 'Map' in item['typeLine'] and item['frameType'] == 3:
+            for u_m in unique_maps:
+                if u_m in item['name']:
+                    unique_maps[u_m] += 1
 
 
 total_in_chaos = 0
@@ -82,6 +107,9 @@ def calculate_total_in_chaos():
 
 
 import_item_data()
+count_items_in_inventory()
 calculate_total_in_chaos()
 
 print(total_in_chaos)
+print(money)
+print(maps)
