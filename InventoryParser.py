@@ -40,6 +40,8 @@ maps = {}
 
 unique_maps = {}
 
+total_in_chaos = 0
+
 
 def import_item_data():
     """imports all relevant items into corresponding dicts"""
@@ -84,9 +86,6 @@ def count_items_in_inventory():
                     unique_maps[u_m] += 1
 
 
-total_in_chaos = 0
-
-
 def calculate_total_in_chaos():
     """each call totals up the chaos value of all currency/maps in the dicts: 'currency', 'maps', 'unique maps'"""
 
@@ -111,5 +110,3 @@ count_items_in_inventory()
 calculate_total_in_chaos()
 
 print(total_in_chaos)
-print(money)
-print(maps)
