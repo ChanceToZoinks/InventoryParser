@@ -61,6 +61,7 @@ def display_user_data_entry_fields():
 
 def store_data_callback():
     """button press calls this and stores data in file for future use"""
+
     # iterate over all entry fields in setup_frame and put the data contained in them into user_inputted_info
     i = 0
     for child in setup_frame.children.values():
