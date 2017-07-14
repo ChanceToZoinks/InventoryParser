@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0379e0c-747f-4101-88d0-43b65df79d73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="c0379e0c-747f-4101-88d0-43b65df79d73" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,26 +12,15 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserData.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/UserData.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InventoryParser.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="InventoryParser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/InventoryParser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+            <state relative-caret-position="540">
+              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
               <folding>
-                <element signature="e#237#271#0" expanded="true" />
-                <element signature="e#1317#2134#0" expanded="false" />
-                <element signature="e#2173#3612#0" expanded="false" />
-                <element signature="e#3651#4279#0" expanded="false" />
+                <element signature="e#3851#4479#0" expanded="false" />
+                <marker date="1500002318672" expanded="false" signature="1512:2334" ph="..." />
+                <marker date="1500002318672" expanded="false" signature="2368:3812" ph="..." />
               </folding>
             </state>
           </provider>
@@ -46,7 +32,7 @@
             <state relative-caret-position="-126">
               <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
-                <element signature="e#65#88#0" expanded="true" />
+                <marker date="1500002318673" expanded="true" signature="65:306" ph="import ..." />
               </folding>
             </state>
           </provider>
@@ -56,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="46" column="106" lean-forward="true" selection-start-line="46" selection-start-column="106" selection-end-line="46" selection-end-column="106" />
+              <caret line="46" column="106" lean-forward="false" selection-start-line="46" selection-start-column="106" selection-end-line="46" selection-end-column="106" />
               <folding />
             </state>
           </provider>
@@ -66,19 +52,12 @@
         <entry file="file://$PROJECT_DIR$/PlayerTrackerHelper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUIMain.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GUIMain.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="12" selection-end-column="30" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <marker date="1500002318673" expanded="true" signature="331:511" ph="..." />
+                <marker date="1500002318673" expanded="true" signature="534:696" ph="..." />
+                <marker date="1500002318673" expanded="true" signature="573:696" ph="..." />
+                <marker date="1500002318673" expanded="true" signature="628:677" ph="..." />
               </folding>
             </state>
           </provider>
@@ -417,12 +396,23 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22447917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -435,15 +425,120 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://C:/Anaconda/Lib/site-packages/requests/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZoneChangeHelper.py" />
+    <entry file="file://$PROJECT_DIR$/PlayerTrackerHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+          <folding>
+            <marker date="1500002318673" expanded="true" signature="331:511" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="534:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="573:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="628:677" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py" />
+    <entry file="file://C:/Anaconda/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="2219" column="0" lean-forward="false" selection-start-line="2219" selection-start-column="0" selection-end-line="2219" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InventoryParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding>
+
+            <element signature="e#3851#4479#0" expanded="false" />
+            <marker date="1500002318672" expanded="false" signature="1512:2334" ph="..." />
+            <marker date="1500002318672" expanded="false" signature="2368:3812" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MarketDataGrabber.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <marker date="1500002318673" expanded="true" signature="65:306" ph="import ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="46" column="106" lean-forward="true" selection-start-line="46" selection-start-column="106" selection-end-line="46" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PlayerTrackerHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="23" />
+          <folding>
+            <marker date="1500002318673" expanded="true" signature="331:511" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="534:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="573:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="628:677" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUIMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="138" column="5" lean-forward="false" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/InventoryParser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
           <folding>
-            <element signature="e#237#271#0" expanded="true" />
-            <element signature="e#1317#2134#0" expanded="false" />
-            <element signature="e#2173#3612#0" expanded="false" />
-            <element signature="e#3651#4279#0" expanded="false" />
+            <element signature="e#3851#4479#0" expanded="false" />
+            <marker date="1500002318672" expanded="false" signature="1512:2334" ph="..." />
+            <marker date="1500002318672" expanded="false" signature="2368:3812" ph="..." />
           </folding>
         </state>
       </provider>
@@ -453,19 +548,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="63" lean-forward="false" selection-start-line="0" selection-start-column="63" selection-end-line="0" selection-end-column="63" />
           <folding>
-            <element signature="e#65#88#0" expanded="true" />
+            <marker date="1500002318673" expanded="true" signature="65:306" ph="import ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/UserData.py" />
     <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -478,7 +566,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
-          <folding />
+
+          <folding>
+            <marker date="1500002318673" expanded="true" signature="331:511" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="534:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="573:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="628:677" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -487,10 +581,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#237#271#0" expanded="true" />
-            <element signature="e#1317#2134#0" expanded="false" />
-            <element signature="e#2173#3612#0" expanded="false" />
-            <element signature="e#3651#4279#0" expanded="false" />
+            <element signature="e#3851#4479#0" expanded="false" />
+            <marker date="1500002318672" expanded="false" signature="1512:2334" ph="..." />
+            <marker date="1500002318672" expanded="false" signature="2368:3812" ph="..." />
           </folding>
         </state>
       </provider>
@@ -504,23 +597,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/UserData.py" />
     <entry file="file://$PROJECT_DIR$/InventoryParser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#237#271#0" expanded="true" />
-            <element signature="e#1317#2134#0" expanded="false" />
-            <element signature="e#2173#3612#0" expanded="false" />
-            <element signature="e#3651#4279#0" expanded="false" />
+            <element signature="e#3851#4479#0" expanded="false" />
+            <marker date="1500002318672" expanded="false" signature="1512:2334" ph="..." />
+            <marker date="1500002318672" expanded="false" signature="2368:3812" ph="..." />
           </folding>
         </state>
       </provider>
@@ -534,23 +619,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/UserData.py" />
     <entry file="file://$PROJECT_DIR$/InventoryParser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#237#271#0" expanded="true" />
-            <element signature="e#1317#2134#0" expanded="false" />
-            <element signature="e#2173#3612#0" expanded="false" />
-            <element signature="e#3651#4279#0" expanded="false" />
+            <element signature="e#3851#4479#0" expanded="false" />
+            <marker date="1500002318672" expanded="false" signature="1512:2334" ph="..." />
+            <marker date="1500002318672" expanded="false" signature="2368:3812" ph="..." />
           </folding>
         </state>
       </provider>
@@ -561,10 +638,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#237#271#0" expanded="true" />
-            <element signature="e#1317#2134#0" expanded="false" />
-            <element signature="e#2173#3612#0" expanded="false" />
-            <element signature="e#3651#4279#0" expanded="false" />
+            <element signature="e#3851#4479#0" expanded="false" />
+            <marker date="1500002318672" expanded="false" signature="1512:2334" ph="..." />
+            <marker date="1500002318672" expanded="false" signature="2368:3812" ph="..." />
           </folding>
         </state>
       </provider>
@@ -609,10 +685,9 @@
         <state relative-caret-position="120">
           <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="45" />
           <folding>
-            <element signature="e#237#271#0" expanded="true" />
-            <element signature="e#1317#2134#0" expanded="false" />
-            <element signature="e#2173#3612#0" expanded="false" />
-            <element signature="e#3651#4279#0" expanded="false" />
+            <element signature="e#3851#4479#0" expanded="false" />
+            <marker date="1500002318672" expanded="false" signature="1512:2334" ph="..." />
+            <marker date="1500002318672" expanded="false" signature="2368:3812" ph="..." />
           </folding>
         </state>
       </provider>
@@ -656,38 +731,24 @@
     <entry file="file://$PROJECT_DIR$/ZoneChangeHelper.py" />
     <entry file="file://$PROJECT_DIR$/PlayerTrackerHelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="-126">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <marker date="1500002318673" expanded="true" signature="65:306" ph="import ..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py" />
     <entry file="file://C:/Anaconda/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="2219" column="0" lean-forward="false" selection-start-line="2219" selection-start-column="0" selection-end-line="2219" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InventoryParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        <state relative-caret-position="285">
+          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
           <folding>
-            <element signature="e#237#271#0" expanded="true" />
-            <element signature="e#1317#2134#0" expanded="false" />
-            <element signature="e#2173#3612#0" expanded="false" />
-            <element signature="e#3651#4279#0" expanded="false" />
+            <marker date="1500002318673" expanded="true" signature="331:511" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="534:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="573:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="628:677" ph="..." />
           </folding>
         </state>
       </provider>
@@ -702,28 +763,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="46" column="106" lean-forward="true" selection-start-line="46" selection-start-column="106" selection-end-line="46" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/UserData.py" />
     <entry file="file://$PROJECT_DIR$/PlayerTrackerHelper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUIMain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="12" selection-end-column="30" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1500002318673" expanded="true" signature="331:511" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="534:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="573:696" ph="..." />
+            <marker date="1500002318673" expanded="true" signature="628:677" ph="..." />
           </folding>
         </state>
       </provider>
@@ -738,9 +788,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UserData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="46" column="106" lean-forward="false" selection-start-line="46" selection-start-column="106" selection-end-line="46" selection-end-column="106" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InventoryParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding>
+            <element signature="e#3851#4479#0" expanded="false" />
+            <marker date="1500002318672" expanded="false" signature="1512:2334" ph="..." />
+            <marker date="1500002318672" expanded="false" signature="2368:3812" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

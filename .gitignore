@@ -137,4 +137,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-userdata.txt
+*.txt
+*.xml
