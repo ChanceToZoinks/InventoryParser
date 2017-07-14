@@ -9,9 +9,24 @@ setup_frame = tkinter.Frame(main_window)
 character_change_frame = tkinter.Frame(main_window)
 
 # this list must always have the same number of entries as 'user_data_file_structure' found in UserData.py
-# this is mostly test code. later it will be improved so it's not so fragile
+# this is mostly test code. later it will be improved so it's not so fragile and also make solutions more generic
 # always in order:  account > character > league > poesessid > client.txt path
 user_inputted_info = ['acc', 'char', 'league', 'poesessid', 'client.txt path']
+
+
+def program_startup():
+    """handles all the necessary checks and routines for startup"""
+
+    # TODO: ADD THE ZONE TRACKER AND CHAOS COUNTER TO THE MAIN SCREEN ALSO A MENU TO ACCESS THE OTHER SCREENS WITH
+    # check if the userdata.txt file is found if not make the user enter all necessary data
+    if os.path.exists('userdata.txt'):
+        # load user data first
+        User.load_user_data()
+        display_character_change()
+        # display main screen here
+    else:
+        missing_user_file = 'userdata.txt not found. complete first time setup'
+        display_message_box(missing_user_file, display_user_data_entry_fields)
 
 
 def file_update(update_type='setup'):
@@ -90,20 +105,6 @@ def store_data_callback():
     setup_frame.grid_forget()
     setup_frame.destroy()
     file_update()
-
-
-def program_startup():
-    """handles all the necessary checks and routines for startup"""
-
-    # check if the userdata.txt file is found if not make the user enter all necessary data
-    if os.path.exists('userdata.txt'):
-        # load user data first
-        User.load_user_data()
-        display_character_change()
-        # display main screen here
-    else:
-        missing_user_file = 'userdata.txt not found. complete first time setup'
-        display_message_box(missing_user_file, display_user_data_entry_fields)
 
 
 def display_message_box(message, callback=None):

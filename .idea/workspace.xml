@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0379e0c-747f-4101-88d0-43b65df79d73" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUIMain.py" afterPath="$PROJECT_DIR$/GUIMain.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InventoryParser.py" afterPath="$PROJECT_DIR$/InventoryParser.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,17 +83,17 @@
       <file leaf-file-name="GUIMain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUIMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="285">
+              <caret line="19" column="114" lean-forward="false" selection-start-line="19" selection-start-column="114" selection-end-line="19" selection-end-column="114" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <element signature="e#604#1616#0" expanded="false" />
-                <element signature="e#1661#2963#0" expanded="false" />
-                <element signature="e#2997#3642#0" expanded="false" />
-                <element signature="e#4223#4450#0" expanded="false" />
-                <element signature="e#4489#5181#0" expanded="false" />
-                <element signature="e#5223#5880#0" expanded="false" />
-                <element signature="e#5929#6579#0" expanded="false" />
+                <element signature="e#1281#2293#0" expanded="false" />
+                <element signature="e#2338#3640#0" expanded="false" />
+                <element signature="e#3674#4319#0" expanded="false" />
+                <element signature="e#4375#4602#0" expanded="false" />
+                <element signature="e#4641#5333#0" expanded="false" />
+                <element signature="e#5375#6032#0" expanded="false" />
+                <element signature="e#6081#6731#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -845,17 +844,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GUIMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="285">
+          <caret line="19" column="114" lean-forward="false" selection-start-line="19" selection-start-column="114" selection-end-line="19" selection-end-column="114" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#604#1616#0" expanded="false" />
-            <element signature="e#1661#2963#0" expanded="false" />
-            <element signature="e#2997#3642#0" expanded="false" />
-            <element signature="e#4223#4450#0" expanded="false" />
-            <element signature="e#4489#5181#0" expanded="false" />
-            <element signature="e#5223#5880#0" expanded="false" />
-            <element signature="e#5929#6579#0" expanded="false" />
+            <element signature="e#1281#2293#0" expanded="false" />
+            <element signature="e#2338#3640#0" expanded="false" />
+            <element signature="e#3674#4319#0" expanded="false" />
+            <element signature="e#4375#4602#0" expanded="false" />
+            <element signature="e#4641#5333#0" expanded="false" />
+            <element signature="e#5375#6032#0" expanded="false" />
+            <element signature="e#6081#6731#0" expanded="false" />
           </folding>
         </state>
       </provider>
