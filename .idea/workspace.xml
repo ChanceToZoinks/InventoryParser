@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0379e0c-747f-4101-88d0-43b65df79d73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUIMain.py" afterPath="$PROJECT_DIR$/GUIMain.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,7 +64,7 @@
       <file leaf-file-name="PlayerTrackerHelper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlayerTrackerHelper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="69">
               <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding>
                 <element signature="e#101#112#0" expanded="true" />
@@ -77,15 +76,19 @@
       <file leaf-file-name="GUIMain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUIMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+            <state relative-caret-position="8">
+              <caret line="198" column="24" lean-forward="false" selection-start-line="198" selection-start-column="24" selection-end-line="198" selection-end-column="24" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <element signature="e#2910#4212#0" expanded="false" />
-                <element signature="e#4246#4891#0" expanded="false" />
-                <element signature="e#4947#5174#0" expanded="false" />
-                <element signature="e#5213#5905#0" expanded="false" />
-                <element signature="e#5947#6604#0" expanded="false" />
+                <element signature="e#1569#3130#0" expanded="false" />
+                <element signature="e#3175#4477#0" expanded="false" />
+                <element signature="e#4511#5156#0" expanded="false" />
+                <element signature="e#5212#5439#0" expanded="false" />
+                <element signature="e#5478#6493#0" expanded="false" />
+                <element signature="e#6535#7192#0" expanded="false" />
+                <element signature="e#7241#7761#0" expanded="false" />
+                <element signature="e#7793#8104#0" expanded="false" />
+                <element signature="e#8929#9666#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -105,6 +108,9 @@
       <find>ramparts</find>
       <find>line</find>
       <find>peninsul</find>
+      <find>forget</find>
+      <find>label</find>
+      <find>pack</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -437,7 +443,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -447,6 +453,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="2219" column="0" lean-forward="false" selection-start-line="2219" selection-start-column="0" selection-end-line="2219" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -760,23 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Anaconda/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="2292" column="0" lean-forward="false" selection-start-line="2292" selection-start-column="0" selection-end-line="2292" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PlayerTrackerHelper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="e#101#112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -793,17 +783,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PlayerTrackerHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="e#101#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Anaconda/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="2219" column="0" lean-forward="false" selection-start-line="2219" selection-start-column="0" selection-end-line="2219" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GUIMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="50" column="24" lean-forward="true" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state relative-caret-position="8">
+          <caret line="198" column="24" lean-forward="false" selection-start-line="198" selection-start-column="24" selection-end-line="198" selection-end-column="24" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#2910#4212#0" expanded="false" />
-            <element signature="e#4246#4891#0" expanded="false" />
-            <element signature="e#4947#5174#0" expanded="false" />
-            <element signature="e#5213#5905#0" expanded="false" />
-            <element signature="e#5947#6604#0" expanded="false" />
+            <element signature="e#1569#3130#0" expanded="false" />
+            <element signature="e#3175#4477#0" expanded="false" />
+            <element signature="e#4511#5156#0" expanded="false" />
+            <element signature="e#5212#5439#0" expanded="false" />
+            <element signature="e#5478#6493#0" expanded="false" />
+            <element signature="e#6535#7192#0" expanded="false" />
+            <element signature="e#7241#7761#0" expanded="false" />
+            <element signature="e#7793#8104#0" expanded="false" />
+            <element signature="e#8929#9666#0" expanded="false" />
           </folding>
         </state>
       </provider>

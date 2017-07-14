@@ -7,6 +7,10 @@ import requests
 main_window = tkinter.Tk()
 setup_frame = tkinter.Frame(main_window)
 character_change_frame = tkinter.Frame(main_window)
+main_menu_frame = tkinter.Frame(main_window)
+
+# this is used to keep track of current menu so a user cant spam "GoTo main menu" and create problems
+current_menu_displayed = main_menu_frame
 
 # this list must always have the same number of entries as 'user_data_file_structure' found in UserData.py
 # this is mostly test code. later it will be improved so it's not so fragile and also make solutions more generic
@@ -17,13 +21,16 @@ user_inputted_info = ['acc', 'char', 'league', 'poesessid', 'client.txt path']
 def program_startup():
     """handles all the necessary checks and routines for startup"""
 
+    # initialize the menu since it should always be available
+    init_nav_menu()
+
     # TODO: ADD THE ZONE TRACKER AND CHAOS COUNTER TO THE MAIN SCREEN ALSO A MENU TO ACCESS THE OTHER SCREENS WITH
     # check if the userdata.txt file is found if not make the user enter all necessary data
     if os.path.exists('userdata.txt'):
         # load user data first
         User.load_user_data()
-        display_character_change()
         # display main screen here
+        display_main_menu()
     else:
         missing_user_file = 'userdata.txt not found. complete first time setup'
         display_message_box(missing_user_file, display_user_data_entry_fields)
@@ -129,21 +136,31 @@ def display_message_box(message, callback=None):
 def display_character_change():
     """displays characters and executes correct function to update character/league selection"""
 
-    character_change_frame.pack(fill='both')
+    # set current window
+    global current_menu_displayed
+    current_menu_displayed = character_change_frame
+
+    character_change_frame.grid()
 
     character_list = tkinter.Listbox(character_change_frame, selectmode='single')
+
+    # change default size of character_list so all data is visible
+    character_list.config(width=50)
 
     for c in grab_characters_from_server():
         character_list.insert(tkinter.END, c['name'] + "-" + c['league'])
 
     character_list.select_set(0)
 
-    character_list.pack(side='left', fill='both', expand=True)
+    # configure list box to expand to stay in center
+    tkinter.Grid.rowconfigure(main_window, 0, weight=1)
+    tkinter.Grid.columnconfigure(main_window, 0, weight=1)
+    character_list.grid()
 
     select_character = tkinter.Button(character_change_frame, text='Confirm', command=lambda: change_character_callback(
                                       character_list.get(character_list.curselection())))
 
-    select_character.pack(side='bottom')
+    select_character.grid()
 
 
 def grab_characters_from_server():
@@ -177,6 +194,54 @@ def change_character_callback(selection):
     # hide the character selection frame
     character_change_frame.grid_forget()
     character_change_frame.destroy()
+
+
+def display_main_menu():
+    """displays main menu frame and contents"""
+
+    # set current window
+    global current_menu_displayed
+    current_menu_displayed = main_menu_frame
+
+    main_menu_frame.grid()
+
+    placeholder_label_for_testing = tkinter.Label(main_menu_frame, text='placeholder asset')
+    placeholder_label_for_testing.grid()
+
+
+def nav_menu_callback(dest_menu_delegate):
+    """this callback function lets us close menus that aren't in use"""
+
+    if dest_menu_delegate == display_main_menu and not current_menu_displayed == main_menu_frame:
+        for item in character_change_frame.children.values():
+            item.grid_remove()
+        # hide frames not in use
+        character_change_frame.grid_remove()
+        # then display the correct frame
+        dest_menu_delegate()
+    elif dest_menu_delegate == display_character_change and not current_menu_displayed == character_change_frame:
+        for item in main_menu_frame.children.values():
+            item.grid_remove()
+        # hide frame not in use
+        main_menu_frame.grid_remove()
+        # then display the correct frame
+        dest_menu_delegate()
+
+
+def init_nav_menu():
+    # the menu is always displayed on all screen to allow navigation between screens
+    nav_menu_button = tkinter.Menubutton(main_window, text='Navigation', relief='raised')
+    nav_menu_button.grid()
+    nav_menu_button.menu = tkinter.Menu(nav_menu_button, tearoff=0)
+    nav_menu_button['menu'] = nav_menu_button.menu
+
+    # we use a callback here so we can make sure only destination menu is displayed
+    nav_menu_button.menu.add_command(label='Main Menu',
+                                     command=lambda: nav_menu_callback(display_main_menu))
+    nav_menu_button.menu.add_command(label='Change Character',
+                                     command=lambda: nav_menu_callback(display_character_change))
+
+    nav_menu_button.grid()
 
 # this is the main entry point into the app
 program_startup()
