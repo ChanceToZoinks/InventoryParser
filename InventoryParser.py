@@ -13,7 +13,7 @@ api_endpoint = 'https://www.pathofexile.com/character-window/get-items'
 # pass account name, character name and the cookie. the cookie is necessary to access inventory other than equipped
 PARAMS = {'accountName': User.account_name, 'character': User.character_name}
 COOKIE = {'POESESSID': User.poesessid}
-
+# TODO: make sure the poesessid hasn't expired and if it has update it
 
 r = requests.get(url=api_endpoint, params=PARAMS, cookies=COOKIE)
 
