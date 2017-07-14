@@ -29,19 +29,28 @@ def program_startup():
         display_message_box(missing_user_file, display_user_data_entry_fields)
 
 
-def file_update(update_type='setup'):
-    """this should be called to ensure that the user info is populated. call with 'push' to update instead of setup"""
+def file_update(update_type='setup', changing_entries=None):
+    """this should be called to ensure that the user info is populated. call with 'push' to update instead of setup
+       you should pass a list of the entries that will change if you intend to push an update.
+       example call: file_update('push', [1, 2]) this will update only the indices 1 and 2 so character and league
+    """
 
     # check if userdata.txt exists and if not create it with the proper format
     if os.path.exists('userdata.txt') and update_type == 'setup':
         print('userdata.txt exists nothing further needed here')
     elif update_type == 'push':
         # the purpose of this case is to allow the function to be used as both a setup and to push updates to UserData
+        # first open the file and read it into memory then replace the entries specified finally push the update
+        with open('userdata.txt', 'r') as file:
+            temp_file = file.readlines()
+            for i, item in enumerate(User.user_data_file_structure):
+                if i in changing_entries:
+                    temp_file[i] = item.replace('%', user_inputted_info[i]) + '\n'
+                else:
+                    continue
+            file.close()
         with open('userdata.txt', 'w') as file:
-            i = 0
-            for item in User.user_data_file_structure:
-                file.writelines(item.replace('%', user_inputted_info[i]) + '\n')
-                i += 1
+            file.writelines(temp_file)
             file.close()
     else:
         with open('userdata.txt', 'w') as file:
@@ -159,14 +168,11 @@ def change_character_callback(selection):
     """this callback function is passed data from the character list and makes that the current character"""
 
     # the argument is passed as a string grabbed from teh listbox so it needs split
-    user_inputted_info[0] = User.account_name
     user_inputted_info[1] = selection.split('-', 1)[0]
     user_inputted_info[2] = selection.split('-', 1)[1]
-    user_inputted_info[3] = User.poesessid
-    user_inputted_info[4] = User.client_txt_path
 
     # push the update to the file and inform UserData of the change
-    file_update('push')
+    file_update('push', [1, 2])
 
     # hide the character selection frame
     character_change_frame.grid_forget()
