@@ -1,15 +1,7 @@
 """Grab the market data for currency and maps from poe.ninja"""
 
-import sys
-
-named_libs = [('requests', 'requests'), ('UserData', 'User')]
-for (name, short) in named_libs:
-    try:
-        lib = __import__(name)
-    except ImportError:
-        print(sys.exc_info())
-    else:
-        globals()[short] = lib
+import UserData as User
+import requests
 
 
 currency_api_endpoint = 'http://api.poe.ninja/api/Data/GetCurrencyOverview'

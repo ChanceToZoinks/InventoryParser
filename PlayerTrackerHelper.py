@@ -1,16 +1,7 @@
 """this helper for the tracker handles client.txt monitoring and notifies the tracker of changes"""
 
 import time
-import sys
-
-named_libs = [('UserData', 'User')]
-for (name, short) in named_libs:
-    try:
-        lib = __import__(name)
-    except ImportError:
-        print(sys.exc_info())
-    else:
-        globals()[short] = lib
+import UserData as User
 
 
 # the 'follow' method for monitoring whether or not a file changes in real time was found here:
