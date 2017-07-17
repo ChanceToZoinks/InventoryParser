@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0379e0c-747f-4101-88d0-43b65df79d73" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PlayerTrackerHelper.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUIMain.py" afterPath="$PROJECT_DIR$/GUIMain.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PlayerTracker.py" afterPath="$PROJECT_DIR$/PlayerTracker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserData.py" afterPath="$PROJECT_DIR$/UserData.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,31 +52,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerTracker.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlayerTracker.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-472">
-              <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="12" selection-end-column="77" />
+            <state relative-caret-position="278">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIMain.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GUIMain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUIMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="267" column="0" lean-forward="true" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
+            <state relative-caret-position="428">
+              <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <element signature="e#1545#3106#0" expanded="false" />
-                <element signature="e#3151#4453#0" expanded="false" />
-                <element signature="e#4487#5132#0" expanded="false" />
-                <element signature="e#5188#5415#0" expanded="false" />
-                <element signature="e#5454#6469#0" expanded="false" />
-                <element signature="e#6511#7168#0" expanded="false" />
-                <element signature="e#7217#7617#0" expanded="false" />
-                <element signature="e#8789#9526#0" expanded="false" />
+                <element signature="e#1606#3167#0" expanded="false" />
+                <element signature="e#3212#4514#0" expanded="false" />
+                <element signature="e#4548#5193#0" expanded="false" />
+                <element signature="e#5249#5476#0" expanded="false" />
+                <element signature="e#5515#6530#0" expanded="false" />
+                <element signature="e#6572#7229#0" expanded="false" />
+                <element signature="e#7278#7678#0" expanded="false" />
+                <element signature="e#8836#9573#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -419,7 +416,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3372093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3372093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -786,29 +783,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
+    <entry file="file://$PROJECT_DIR$/GUIMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-472">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="12" selection-end-column="77" />
-          <folding />
+        <state relative-caret-position="428">
+          <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#1606#3167#0" expanded="false" />
+            <element signature="e#3212#4514#0" expanded="false" />
+            <element signature="e#4548#5193#0" expanded="false" />
+            <element signature="e#5249#5476#0" expanded="false" />
+            <element signature="e#5515#6530#0" expanded="false" />
+            <element signature="e#6572#7229#0" expanded="false" />
+            <element signature="e#7278#7678#0" expanded="false" />
+            <element signature="e#8836#9573#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUIMain.py">
+    <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
-          <caret line="267" column="0" lean-forward="true" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#1545#3106#0" expanded="false" />
-            <element signature="e#3151#4453#0" expanded="false" />
-            <element signature="e#4487#5132#0" expanded="false" />
-            <element signature="e#5188#5415#0" expanded="false" />
-            <element signature="e#5454#6469#0" expanded="false" />
-            <element signature="e#6511#7168#0" expanded="false" />
-            <element signature="e#7217#7617#0" expanded="false" />
-            <element signature="e#8789#9526#0" expanded="false" />
-          </folding>
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

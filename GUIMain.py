@@ -4,6 +4,7 @@ import os
 import UserData as User
 import requests
 import PlayerTracker
+from itertools import islice
 
 main_window = tkinter.Tk()
 setup_frame = tkinter.Frame(main_window)
@@ -30,6 +31,7 @@ def program_startup():
     if os.path.exists('userdata.txt'):
         # load user data first
         User.load_user_data()
+        start_player_tracking()
         # display main screen here
         display_main_menu()
     else:
@@ -202,8 +204,6 @@ def display_main_menu():
 
     main_menu_frame.grid()
 
-    follow()
-
     current_zone_label = tkinter.Label(main_menu_frame, text=str(PlayerTracker.current_zone))
     current_zone_label.grid()
 
@@ -242,43 +242,50 @@ def init_nav_menu():
 
     nav_menu_button.grid()
 
-loglines = ''
+# the reversed_lines, reversed_block and check_last_5_lines functions were found here:
+# https://stackoverflow.com/questions/260273/most-efficient-way-to-search-the-last-x-lines-of-a-file-in-python
 
 
-def follow():
-    """this recursively searches the last lines of the file so they can be parsed to determine current zone"""
-
-    global loglines
-
-    with open(User.client_txt_path, 'r') as f:
-        f.seek(0, 2)
-        fsize = f.tell()
-        # start counting 450 characters from the end of the file
-        # i came up with this number based on the expected size of the update block in client.txt + a small padding
-        f.seek(max(fsize-450, 0), 0)
-        lines = f.readlines()
-
-    loglines = lines[-10:]
-
-    main_window.after(100, start_tracking)
+def reversed_lines(file):
+    """Generate the lines of file in reverse order."""
+    part = ''
+    for block in reversed_blocks(file):
+        for c in reversed(block):
+            if c == '\n' and part:
+                yield part[::-1]
+                part = ''
+            part += c
+    if part:
+        yield part[::-1]
 
 
-def start_tracking():
-    """this parses the client.txt updates and notifies the tracker"""
+def reversed_blocks(file, blocksize=4096):
+    """Generate blocks of file's contents in reverse order."""
+    file.seek(0, os.SEEK_END)
+    here = file.tell()
+    while 0 < here:
+        delta = min(blocksize, here)
+        here -= delta
+        file.seek(here, os.SEEK_SET)
+        yield file.read(delta)
 
-    for line in loglines:
-        if 'Tile hash: ' in line:
-            temp_hash = line.split('Tile hash: ', 1)[1].rstrip('\n')
-            if temp_hash not in PlayerTracker.tile_hash:
-                # this line adds the tile hash to the appropriate list and strips the newline character at the end
-                PlayerTracker.tile_hash.append(temp_hash)
-        elif 'Entering area ' in line:
-            temp_name = line.split('Entering area ', 1)[1].rstrip('\n')
-            if temp_name not in PlayerTracker.zone_name:
-                PlayerTracker.zone_name.append(temp_name)
-                PlayerTracker.zone_changed(temp_hash, temp_name)
-    follow()
 
+def check_last_5_lines(file, key):
+    """searching the last 5 lines of the file because the last 5 lines in Client.txt contain the info needed"""
+
+    for line in islice(reversed_lines(file), 5):
+        # first set tile hash then set zone name
+        if key in line.rstrip('\n'):
+            temp_zone_name = line.split(key, 1)[1]
+            # if the most recent tile hash found isn't the current tile hash then we change the current tile hash
+            if not temp_zone_name == PlayerTracker.current_zone:
+                PlayerTracker.zone_changed(temp_zone_name)
+    main_window.after(100, check_last_5_lines, file, key)
+
+
+def start_player_tracking():
+    file = open(User.client_txt_path, 'r')
+    check_last_5_lines(file, 'Entering area ')
 
 # this is the main entry point into the app
 program_startup()
