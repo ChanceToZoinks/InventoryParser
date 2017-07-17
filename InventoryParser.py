@@ -111,8 +111,8 @@ def calculate_total_in_chaos():
     global chaos_per_second
     global chaos_stamps
 
-    # keep track of the last 10 chaos values so an average/time can be established
-    if len(chaos_stamps) > 10:
+    # keep track of the last 50 chaos values so an average/time can be established. helps reduce wild swings
+    if len(chaos_stamps) > 50:
         chaos_stamps = chaos_stamps[1:]
         chaos_stamps.append(total_in_chaos)
     else:
