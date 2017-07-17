@@ -22,6 +22,7 @@ current_zone_var = tkinter.StringVar()
 total_in_chaos_var = tkinter.StringVar()
 chaos_per_second_var = tkinter.StringVar()
 chaos_per_hour_var = tkinter.StringVar()
+current_character_var = tkinter.StringVar()
 
 # this list must always have the same number of entries as 'user_data_file_structure' found in UserData.py
 # this is mostly test code. later it will be improved so it's not so fragile and also make solutions more generic
@@ -36,15 +37,14 @@ def program_startup():
 
     global nav_menu_initiated_flag
 
-    if nav_menu_initiated_flag == 0:
-        # initialize the menu since it should always be available
-        init_nav_menu()
-        nav_menu_initiated_flag += 1
-
     # check if the userdata.txt file is found if not make the user enter all necessary data
     if os.path.exists('userdata.txt'):
         # load user data first
         User.load_user_data()
+        if nav_menu_initiated_flag == 0:
+            # initialize the menu since it should always be available
+            init_nav_menu()
+            nav_menu_initiated_flag += 1
         # populate all necessary data
         InventoryParser.inventory_data_setup()
         # open the client.txt file for monitoring and tracking player
@@ -215,6 +215,8 @@ def change_character_callback(selection):
     # push the update to the file and inform UserData of the change
     file_update('push', [1, 2])
 
+    current_character_var.set(User.character_name + "-" + User.league)
+
 
 def display_main_menu():
     """displays main menu frame and contents"""
@@ -272,7 +274,6 @@ def nav_menu_callback(dest_menu_delegate):
 def init_nav_menu():
     # the menu is always displayed on all screen to allow navigation between screens
     nav_menu_button = tkinter.Menubutton(main_window, text='Navigation', relief='raised')
-    nav_menu_button.grid()
     nav_menu_button.menu = tkinter.Menu(nav_menu_button, tearoff=0)
     nav_menu_button['menu'] = nav_menu_button.menu
 
@@ -282,7 +283,14 @@ def init_nav_menu():
     nav_menu_button.menu.add_command(label='Change Character',
                                      command=lambda: nav_menu_callback(display_character_change))
 
-    nav_menu_button.grid()
+    nav_menu_button.grid(column=0, row=0, sticky='w')
+
+    # also display current character/league on the nav menu
+    current_character_var.set(User.character_name + "-" + User.league)
+    current_char_label = tkinter.Label(main_window, text='Char-league:')
+    current_character = tkinter.Label(main_window, textvariable=current_character_var)
+    current_char_label.grid(column=1, row=1)
+    current_character.grid(column=2, row=1)
 
 
 def start_player_tracking(file):
