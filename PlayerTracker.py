@@ -40,9 +40,6 @@
    in Legacy league with the use of IIQ and Spider Forest Map.
 """
 
-import PlayerTrackerHelper
-
-
 # 'zone_history' keeps track of every zone a player enters and the corresponding Tile hash
 # this is important so historical data can be gathered on each zone. zone_history is zipped from two lists
 zone_history = {}
@@ -52,6 +49,8 @@ zone_name = []
 
 # 'current_zone' takes the form tile_hash:zone_name and is updated on zone change
 current_zone = {'tile_hash': '', 'zone_name': ''}
+
+# TODO: REFACTOR THE CODE IN THE HELPER SO IT DOESN'T USE TIME.SLEEP. CANT INCLUDE IN GUI UNTIL THEN
 
 
 def zone_changed(temp_hash, temp_name):
@@ -65,13 +64,5 @@ def zone_changed(temp_hash, temp_name):
 
     zone_history = dict(zip(tile_hash, zone_name))
 
-    # TODO: instead of printing the information the data will be sent to some other file to be processed and
-    # TODO: incorporated into a full app
-    print('zone changed. current zone: ' + str(current_zone))
+    print('zone changed.\ncurrent zone: ' + str(current_zone))
     print('zones visited this session: ' + str(zone_history))
-
-
-def start_tracking():
-    """the redundancy here is necessary for centralization. this should be the method called to start tracking"""
-
-    PlayerTrackerHelper.start_tracking()

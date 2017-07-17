@@ -3,6 +3,7 @@ from tkinter import messagebox
 import os
 import UserData as User
 import requests
+import PlayerTracker
 
 main_window = tkinter.Tk()
 setup_frame = tkinter.Frame(main_window)
@@ -24,7 +25,7 @@ def program_startup():
     # initialize the menu since it should always be available
     init_nav_menu()
 
-    # TODO: ADD THE ZONE TRACKER AND CHAOS COUNTER TO THE MAIN SCREEN ALSO A MENU TO ACCESS THE OTHER SCREENS WITH
+    # TODO: ADD THE ZONE TRACKER AND CHAOS COUNTER TO THE MAIN SCREEN
     # check if the userdata.txt file is found if not make the user enter all necessary data
     if os.path.exists('userdata.txt'):
         # load user data first
@@ -191,10 +192,6 @@ def change_character_callback(selection):
     # push the update to the file and inform UserData of the change
     file_update('push', [1, 2])
 
-    # hide the character selection frame
-    character_change_frame.grid_forget()
-    character_change_frame.destroy()
-
 
 def display_main_menu():
     """displays main menu frame and contents"""
@@ -205,8 +202,10 @@ def display_main_menu():
 
     main_menu_frame.grid()
 
-    placeholder_label_for_testing = tkinter.Label(main_menu_frame, text='placeholder asset')
-    placeholder_label_for_testing.grid()
+    follow()
+
+    current_zone_label = tkinter.Label(main_menu_frame, text=str(PlayerTracker.current_zone))
+    current_zone_label.grid()
 
 
 def nav_menu_callback(dest_menu_delegate):
@@ -242,6 +241,44 @@ def init_nav_menu():
                                      command=lambda: nav_menu_callback(display_character_change))
 
     nav_menu_button.grid()
+
+loglines = ''
+
+
+def follow():
+    """this recursively searches the last lines of the file so they can be parsed to determine current zone"""
+
+    global loglines
+
+    with open(User.client_txt_path, 'r') as f:
+        f.seek(0, 2)
+        fsize = f.tell()
+        # start counting 450 characters from the end of the file
+        # i came up with this number based on the expected size of the update block in client.txt + a small padding
+        f.seek(max(fsize-450, 0), 0)
+        lines = f.readlines()
+
+    loglines = lines[-10:]
+
+    main_window.after(100, start_tracking)
+
+
+def start_tracking():
+    """this parses the client.txt updates and notifies the tracker"""
+
+    for line in loglines:
+        if 'Tile hash: ' in line:
+            temp_hash = line.split('Tile hash: ', 1)[1].rstrip('\n')
+            if temp_hash not in PlayerTracker.tile_hash:
+                # this line adds the tile hash to the appropriate list and strips the newline character at the end
+                PlayerTracker.tile_hash.append(temp_hash)
+        elif 'Entering area ' in line:
+            temp_name = line.split('Entering area ', 1)[1].rstrip('\n')
+            if temp_name not in PlayerTracker.zone_name:
+                PlayerTracker.zone_name.append(temp_name)
+                PlayerTracker.zone_changed(temp_hash, temp_name)
+    follow()
+
 
 # this is the main entry point into the app
 program_startup()
