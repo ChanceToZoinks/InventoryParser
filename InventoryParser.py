@@ -5,6 +5,10 @@
 import MarketDataGrabber as Market
 import UserData as User
 import requests
+import time
+
+# this is to calculate the chaos/hour
+start_time = time.time()
 
 # this holds the json data from the pathofexile.com api
 items = {}
@@ -20,6 +24,12 @@ maps = {}
 unique_maps = {}
 
 total_in_chaos = 0
+
+chaos_stamps = []
+
+chaos_per_second = 0
+
+chaos_per_hour = 0
 
 
 def get_items_in_inventory():
@@ -97,6 +107,16 @@ def calculate_total_in_chaos():
     """each call totals up the chaos value of all currency/maps in the dicts: 'currency', 'maps', 'unique maps'"""
 
     global total_in_chaos
+    global chaos_per_hour
+    global chaos_per_second
+    global chaos_stamps
+
+    # keep track of the last 10 chaos values so an average/time can be established
+    if len(chaos_stamps) > 10:
+        chaos_stamps = chaos_stamps[1:]
+        chaos_stamps.append(total_in_chaos)
+    else:
+        chaos_stamps.append(total_in_chaos)
 
     # we have to reset total in chaos each time so it doesn't just increase constantly
     total_in_chaos = 0
@@ -115,6 +135,13 @@ def calculate_total_in_chaos():
 
     for u_m in unique_maps:
         total_in_chaos += unique_maps[u_m] * Market.item_value_search(u_m, 'u_m')
+
+    total = 0
+    for x in chaos_stamps:
+        total += x
+    average_chaos = total / len(chaos_stamps)
+    chaos_per_second = average_chaos / (time.time() - start_time)
+    chaos_per_hour = 3600 * chaos_per_second
 
 
 item_data_imported_flag = 0

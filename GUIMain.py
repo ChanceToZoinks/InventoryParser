@@ -12,7 +12,7 @@ character_change_frame = tkinter.Frame(main_window)
 main_menu_frame = tkinter.Frame(main_window)
 
 character_change_frame.config(width=50, height=50)
-main_menu_frame.config(width=50, height=50)
+main_menu_frame.config(width=500, height=50)
 
 # this is used to keep track of current menu so a user cant spam "GoTo main menu" and create problems
 current_menu_displayed = main_menu_frame
@@ -20,6 +20,8 @@ current_menu_displayed = main_menu_frame
 current_zone_var = tkinter.StringVar()
 # total value of inventory stringvar
 total_in_chaos_var = tkinter.StringVar()
+chaos_per_second_var = tkinter.StringVar()
+chaos_per_hour_var = tkinter.StringVar()
 
 # this list must always have the same number of entries as 'user_data_file_structure' found in UserData.py
 # this is mostly test code. later it will be improved so it's not so fragile and also make solutions more generic
@@ -39,7 +41,6 @@ def program_startup():
         init_nav_menu()
         nav_menu_initiated_flag += 1
 
-    # TODO: ADD THE ZONE TRACKER AND CHAOS COUNTER TO THE MAIN SCREEN
     # check if the userdata.txt file is found if not make the user enter all necessary data
     if os.path.exists('userdata.txt'):
         # load user data first
@@ -49,6 +50,8 @@ def program_startup():
         # open the client.txt file for monitoring and tracking player
         file = open(User.client_txt_path)
         start_player_tracking(file)
+        # start tracking player's inventory value. updates every 1 second
+        inventory_value_updater()
         # display main screen here
         display_main_menu()
     else:
@@ -234,6 +237,18 @@ def display_main_menu():
     money_label.grid(column=0, row=1)
     total_chaos_label.grid(column=1, row=1, sticky='n')
 
+    chaos_per_second_var.set(InventoryParser.chaos_per_second)
+    c_p_s_label = tkinter.Label(main_menu_frame, text='Chaos/Second')
+    chaos_per_second_label = tkinter.Label(main_menu_frame, textvariable=chaos_per_second_var)
+    c_p_s_label.grid(column=0, row=3)
+    chaos_per_second_label.grid(column=1, row=3, sticky='n')
+
+    chaos_per_hour_var.set(InventoryParser.chaos_per_hour)
+    c_p_h_label = tkinter.Label(main_menu_frame, text='Chaos/Hour:')
+    chaos_per_hour_label = tkinter.Label(main_menu_frame, textvariable=chaos_per_hour_var)
+    c_p_h_label.grid(column=0, row=2)
+    chaos_per_hour_label.grid(column=1, row=2, sticky='n')
+
 
 def nav_menu_callback(dest_menu_delegate):
     """this callback function lets us close menus that aren't in use"""
@@ -278,9 +293,18 @@ def start_player_tracking(file):
     # when the zone changes the current zone display is updated and inventory value recalculated
     if not str(current_zone_var.get()) == PlayerTracker.current_zone:
         current_zone_var.set(PlayerTracker.current_zone)
-        InventoryParser.count_and_calc()
-        total_in_chaos_var.set("{:.2f}".format(InventoryParser.total_in_chaos) + " chaos")
     main_window.after(100, start_player_tracking, file)
+
+
+def inventory_value_updater():
+    """every one second the value of the player's inventory is updated"""
+
+    InventoryParser.count_and_calc()
+    total_in_chaos_var.set("{:.2f}".format(InventoryParser.total_in_chaos) + " chaos")
+    chaos_per_hour_var.set("{:.2f}".format(InventoryParser.chaos_per_hour))
+    chaos_per_second_var.set("{:.2f}".format(InventoryParser.chaos_per_second))
+    main_window.after(1000, inventory_value_updater)
+
 
 # this is the main entry point into the app
 program_startup()
