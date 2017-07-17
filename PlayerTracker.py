@@ -39,6 +39,8 @@
    efficiency of a given zone to another. With that said this should prove useful for targeted farming such as was done
    in Legacy league with the use of IIQ and Spider Forest Map.
 """
+from itertools import islice
+import os
 
 # 'zone_history' keeps track of every zone a player enters
 # this is important so historical data can be gathered on each zone.
@@ -60,3 +62,42 @@ def zone_changed(temp_name):
 
     print('zone changed.\ncurrent zone: ' + str(current_zone.rstrip('\n')))
     print('zones visited this session: ' + str(zone_history))
+
+# the reversed_lines, reversed_block and check_last_5_lines functions were found here:
+# https://stackoverflow.com/questions/260273/most-efficient-way-to-search-the-last-x-lines-of-a-file-in-python
+
+
+def reversed_lines(file):
+    """Generate the lines of file in reverse order."""
+    part = ''
+    for block in reversed_blocks(file):
+        for c in reversed(block):
+            if c == '\n' and part:
+                yield part[::-1]
+                part = ''
+            part += c
+    if part:
+        yield part[::-1]
+
+
+def reversed_blocks(file, blocksize=4096):
+    """Generate blocks of file's contents in reverse order."""
+    file.seek(0, os.SEEK_END)
+    here = file.tell()
+    while 0 < here:
+        delta = min(blocksize, here)
+        here -= delta
+        file.seek(here, os.SEEK_SET)
+        yield file.read(delta)
+
+
+def check_last_5_lines(file, key):
+    """searching the last 5 lines of the file because the last 5 lines in Client.txt contain the info needed"""
+
+    for line in islice(reversed_lines(file), 5):
+        # first set tile hash then set zone name
+        if key in line.rstrip('\n'):
+            temp_zone_name = line.split(key, 1)[1]
+            # if the most recent tile hash found isn't the current tile hash then we change the current tile hash
+            if not temp_zone_name == current_zone:
+                zone_changed(temp_zone_name)

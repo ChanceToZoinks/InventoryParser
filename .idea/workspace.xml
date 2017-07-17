@@ -52,31 +52,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerTracker.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerTracker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="473">
+              <caret line="102" column="44" lean-forward="false" selection-start-line="102" selection-start-column="44" selection-end-line="102" selection-end-column="44" />
+              <folding>
+                <element signature="e#3192#3220#0" expanded="true" />
+                <element signature="e#4091#4383#0" expanded="false" />
+                <element signature="e#4433#4691#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUIMain.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUIMain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUIMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            <state relative-caret-position="383">
+              <caret line="255" column="49" lean-forward="true" selection-start-line="255" selection-start-column="49" selection-end-line="255" selection-end-column="49" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <element signature="e#1606#3167#0" expanded="false" />
-                <element signature="e#3212#4514#0" expanded="false" />
-                <element signature="e#4548#5193#0" expanded="false" />
-                <element signature="e#5249#5476#0" expanded="false" />
-                <element signature="e#5515#6530#0" expanded="false" />
-                <element signature="e#6572#7229#0" expanded="false" />
-                <element signature="e#7278#7678#0" expanded="false" />
-                <element signature="e#8836#9573#0" expanded="false" />
+                <element signature="e#1698#3259#0" expanded="false" />
+                <element signature="e#3304#4606#0" expanded="false" />
+                <element signature="e#4640#5285#0" expanded="false" />
+                <element signature="e#5341#5568#0" expanded="false" />
+                <element signature="e#5607#6622#0" expanded="false" />
+                <element signature="e#6664#7321#0" expanded="false" />
+                <element signature="e#7370#7770#0" expanded="false" />
+                <element signature="e#8199#8946#0" expanded="false" />
+                <element signature="e#8974#9711#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -480,7 +485,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="46" column="106" lean-forward="true" selection-start-line="46" selection-start-column="106" selection-end-line="46" selection-end-column="106" />
-          <folding />
+          <folding>
+            <element signature="e#3192#3220#0" expanded="true" />
+            <element signature="e#4091#4383#0" expanded="false" />
+            <element signature="e#4433#4691#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -733,14 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Anaconda/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="2219" column="0" lean-forward="false" selection-start-line="2219" selection-start-column="0" selection-end-line="2219" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UserData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -783,29 +784,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUIMain.py">
+    <entry file="file://C:/Anaconda/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#1606#3167#0" expanded="false" />
-            <element signature="e#3212#4514#0" expanded="false" />
-            <element signature="e#4548#5193#0" expanded="false" />
-            <element signature="e#5249#5476#0" expanded="false" />
-            <element signature="e#5515#6530#0" expanded="false" />
-            <element signature="e#6572#7229#0" expanded="false" />
-            <element signature="e#7278#7678#0" expanded="false" />
-            <element signature="e#8836#9573#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="2292" column="0" lean-forward="false" selection-start-line="2292" selection-start-column="0" selection-end-line="2292" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PlayerTracker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="473">
+          <caret line="102" column="44" lean-forward="false" selection-start-line="102" selection-start-column="44" selection-end-line="102" selection-end-column="44" />
+          <folding>
+            <element signature="e#3192#3220#0" expanded="true" />
+            <element signature="e#4091#4383#0" expanded="false" />
+            <element signature="e#4433#4691#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUIMain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="255" column="49" lean-forward="true" selection-start-line="255" selection-start-column="49" selection-end-line="255" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#1698#3259#0" expanded="false" />
+            <element signature="e#3304#4606#0" expanded="false" />
+            <element signature="e#4640#5285#0" expanded="false" />
+            <element signature="e#5341#5568#0" expanded="false" />
+            <element signature="e#5607#6622#0" expanded="false" />
+            <element signature="e#6664#7321#0" expanded="false" />
+            <element signature="e#7370#7770#0" expanded="false" />
+            <element signature="e#8199#8946#0" expanded="false" />
+            <element signature="e#8974#9711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
