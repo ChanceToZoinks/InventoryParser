@@ -31,5 +31,3 @@ def load_user_data():
                 poesessid = line.split('=', 1)[1].strip("\'\r\n")
             elif 'client' in line:
                 client_txt_path = line.split('=', 1)[1].strip("\'\r\n")
-
-load_user_data()

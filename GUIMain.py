@@ -4,35 +4,51 @@ import os
 import UserData as User
 import requests
 import PlayerTracker
+import InventoryParser
 
 main_window = tkinter.Tk()
 setup_frame = tkinter.Frame(main_window)
 character_change_frame = tkinter.Frame(main_window)
 main_menu_frame = tkinter.Frame(main_window)
 
+character_change_frame.config(width=50, height=50)
+main_menu_frame.config(width=50, height=50)
+
 # this is used to keep track of current menu so a user cant spam "GoTo main menu" and create problems
 current_menu_displayed = main_menu_frame
 # this tracks the player's current zone and allows it to be constantly up to date
 current_zone_var = tkinter.StringVar()
+# total value of inventory stringvar
+total_in_chaos_var = tkinter.StringVar()
 
 # this list must always have the same number of entries as 'user_data_file_structure' found in UserData.py
 # this is mostly test code. later it will be improved so it's not so fragile and also make solutions more generic
 # always in order:  account > character > league > poesessid > client.txt path
 user_inputted_info = ['acc', 'char', 'league', 'poesessid', 'client.txt path']
 
+nav_menu_initiated_flag = 0
+
 
 def program_startup():
     """handles all the necessary checks and routines for startup"""
 
-    # initialize the menu since it should always be available
-    init_nav_menu()
+    global nav_menu_initiated_flag
+
+    if nav_menu_initiated_flag == 0:
+        # initialize the menu since it should always be available
+        init_nav_menu()
+        nav_menu_initiated_flag += 1
 
     # TODO: ADD THE ZONE TRACKER AND CHAOS COUNTER TO THE MAIN SCREEN
     # check if the userdata.txt file is found if not make the user enter all necessary data
     if os.path.exists('userdata.txt'):
         # load user data first
         User.load_user_data()
-        start_player_tracking()
+        # populate all necessary data
+        InventoryParser.inventory_data_setup()
+        # open the client.txt file for monitoring and tracking player
+        file = open(User.client_txt_path)
+        start_player_tracking(file)
         # display main screen here
         display_main_menu()
     else:
@@ -76,7 +92,7 @@ def file_update(update_type='setup', changing_entries=None):
 def display_user_data_entry_fields():
     """this displays all of the necessary fields and button for initial user data setup"""
 
-    setup_frame.pack(fill='both')
+    setup_frame.grid()
 
     account_label = tkinter.Label(setup_frame, text='Account', justify='left')
     char_label = tkinter.Label(setup_frame, text='Character', justify='left')
@@ -125,6 +141,7 @@ def store_data_callback():
     setup_frame.grid_forget()
     setup_frame.destroy()
     file_update()
+    program_startup()
 
 
 def display_message_box(message, callback=None):
@@ -206,8 +223,16 @@ def display_main_menu():
     main_menu_frame.grid()
 
     current_zone_var.set(PlayerTracker.current_zone)
+    zone_label = tkinter.Label(main_menu_frame, text='Current Zone:')
     current_zone_label = tkinter.Label(main_menu_frame, textvariable=current_zone_var)
-    current_zone_label.grid()
+    zone_label.grid(column=0, row=0)
+    current_zone_label.grid(column=1, row=0, sticky='s')
+
+    total_in_chaos_var.set("{:.2f}".format(InventoryParser.total_in_chaos) + " chaos")
+    money_label = tkinter.Label(main_menu_frame, text='Total Value:')
+    total_chaos_label = tkinter.Label(main_menu_frame, textvariable=total_in_chaos_var)
+    money_label.grid(column=0, row=1)
+    total_chaos_label.grid(column=1, row=1, sticky='n')
 
 
 def nav_menu_callback(dest_menu_delegate):
@@ -245,15 +270,17 @@ def init_nav_menu():
     nav_menu_button.grid()
 
 
-def start_player_tracking():
+def start_player_tracking(file):
     """starts the tracking and loops the search updating necessary variables"""
 
-    with open(User.client_txt_path, 'r') as file:
-        key = 'Entering area '
-        PlayerTracker.check_last_5_lines(file, key)
-        if not str(current_zone_var.get()) == PlayerTracker.current_zone:
-            current_zone_var.set(PlayerTracker.current_zone)
-    main_window.after(100, start_player_tracking)
+    key = 'Entering area '
+    PlayerTracker.check_last_5_lines(file, key)
+    # when the zone changes the current zone display is updated and inventory value recalculated
+    if not str(current_zone_var.get()) == PlayerTracker.current_zone:
+        current_zone_var.set(PlayerTracker.current_zone)
+        InventoryParser.count_and_calc()
+        total_in_chaos_var.set("{:.2f}".format(InventoryParser.total_in_chaos) + " chaos")
+    main_window.after(100, start_player_tracking, file)
 
 # this is the main entry point into the app
 program_startup()

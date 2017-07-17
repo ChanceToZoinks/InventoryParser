@@ -51,7 +51,7 @@ current_zone = ''
 
 
 def zone_changed(temp_name):
-    """the helper calls this method to notify the tracker that a zone change has occurred"""
+    """when a zone changes this is called"""
 
     global current_zone
 
@@ -69,6 +69,7 @@ def zone_changed(temp_name):
 
 def reversed_lines(file):
     """Generate the lines of file in reverse order."""
+
     part = ''
     for block in reversed_blocks(file):
         for c in reversed(block):
@@ -82,6 +83,7 @@ def reversed_lines(file):
 
 def reversed_blocks(file, blocksize=4096):
     """Generate blocks of file's contents in reverse order."""
+
     file.seek(0, os.SEEK_END)
     here = file.tell()
     while 0 < here:
