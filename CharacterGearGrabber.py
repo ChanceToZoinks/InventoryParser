@@ -1,5 +1,6 @@
 import UserData as User
 import requests
+import re
 
 gear_resists = {'helm': {'fire': 0, 'cold': 0, 'lightning': 0, 'craftable': True},
                 'bodyarmour': {'fire': 0, 'cold': 0, 'lightning': 0, 'craftable': True},
@@ -11,8 +12,11 @@ gear_resists = {'helm': {'fire': 0, 'cold': 0, 'lightning': 0, 'craftable': True
                 'ring2': {'fire': 0, 'cold': 0, 'lightning': 0, 'craftable': True},
                 'weapon': {'fire': 0, 'cold': 0, 'lightning': 0, 'craftable': True},
                 'offhand': {'fire': 0, 'cold': 0, 'lightning': 0, 'craftable': True},
-                'passivejewels': {'fire': 0, 'cold': 0, 'lightning': 0}
+                'passivejewels': {'fire': 0, 'cold': 0, 'lightning': 0},
+                'tree': {'fire': 0, 'cold': 0, 'lightning': 0}
                 }
+
+tree_nodes = {}
 
 totals = {'fire': 0, 'cold': 0, 'lightning': 0}
 
@@ -21,16 +25,19 @@ jewel_api_endpoint = 'https://www.pathofexile.com/character-window/get-passive-s
 
 
 def grab_inventory_data(use_jewels=False):
-    """grabs inventory from ggg api and loads the local data with it"""
+    """grabs inventory from ggg api and loads the local data with it, use_jewels=True if your jewels have res on them"""
 
     User.load_user_data()
 
-    params = {'accountName': User.account_name, 'character': User.character_name}
+    params = {'accountName': User.account_name, 'character': User.character_name, 'reqData': 'False'}
     cookie = {'POESESSID': User.poesessid}
 
     r = requests.get(gear_api_endpoint, params=params, cookies=cookie)
     g = r.json()
     items = g['items']
+
+    t = requests.get(jewel_api_endpoint, params=params, cookies=cookie)
+    j = t.json()
 
     for item in items:
         if item['inventoryId'].lower() in gear_resists:
@@ -53,8 +60,6 @@ def grab_inventory_data(use_jewels=False):
                 gear_resists[item['inventoryId'].lower()]['craftable'] = True
 
     if use_jewels:
-        r = requests.get(jewel_api_endpoint, params=params, cookies=cookie)
-        j = r.json()
         items = j['items']
 
         for item in items:
@@ -62,6 +67,30 @@ def grab_inventory_data(use_jewels=False):
                 for resist in item['explicitMods']:
                     if 'resistance' in resist.lower():
                         parse_gear(item, resist.lower())
+    # load all the tree nodes into local memory
+    for node in j['skillTreeData']['nodes']:
+        tree_nodes[node['id']] = [c for c in node['sd']]
+
+    # compare the hashes to the nodes and if they give resists add to total
+    single_rez_pattern = re.compile('\+\d{1,2}% to [a-zA-Z]* Resistance')
+    all_rez_pattern = re.compile('\+\d{1,2}% to all Elemental Resistances')
+    for h in j['hashes']:
+        for stat in tree_nodes[h]:
+            if single_rez_pattern.match(stat):
+                if 'fire' in stat.lower():
+                    gear_resists['tree']['fire'] += int(stat.strip('+').split('%', 1)[0])
+                if 'cold' in stat.lower():
+                    gear_resists['tree']['cold'] += int(stat.strip('+').split('%', 1)[0])
+                if 'lightning' in stat.lower():
+                    gear_resists['tree']['lightning'] += int(stat.strip('+').split('%', 1)[0])
+            elif all_rez_pattern.match(stat):
+                gear_resists['tree']['fire'] += int(stat.strip('+').split('%', 1)[0])
+                gear_resists['tree']['cold'] += int(stat.strip('+').split('%', 1)[0])
+                gear_resists['tree']['lightning'] += int(stat.strip('+').split('%', 1)[0])
+
+    # no need to keep a giant dict in memory after we use it
+    tree_nodes.clear()
+    calculate_totals()
 
 
 def parse_gear(item, resist_string):
@@ -81,6 +110,4 @@ def calculate_totals():
         totals['lightning'] += gear_resists[piece]['lightning']
 
 grab_inventory_data(use_jewels=True)
-calculate_totals()
-print(gear_resists)
 print(totals)

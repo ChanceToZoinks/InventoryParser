@@ -72,7 +72,7 @@
       <file leaf-file-name="GUIMain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUIMain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
+            <state relative-caret-position="1350">
               <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -86,10 +86,13 @@
       <file leaf-file-name="CharacterGearGrabber.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CharacterGearGrabber.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="15">
+              <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#1332#4623#0" expanded="false" />
+                <element signature="e#4667#5129#0" expanded="false" />
+                <element signature="e#5160#5358#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -114,6 +117,8 @@
       <find>pack</find>
       <find>grid_fo</find>
       <find>track</find>
+      <find>resistance</find>
+      <find>+8% to all</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,7 +166,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -177,6 +181,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -752,7 +757,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GUIMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
+        <state relative-caret-position="1350">
           <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
@@ -785,10 +790,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CharacterGearGrabber.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="2" column="9" lean-forward="true" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#1332#4623#0" expanded="false" />
+            <element signature="e#4667#5129#0" expanded="false" />
+            <element signature="e#5160#5358#0" expanded="false" />
           </folding>
         </state>
       </provider>
